@@ -24,8 +24,15 @@ storiesOf('Button', module)
   .addDecorator(CenterDecorator)
   .addDecorator(backgrounds)
   .add('text only', () => (
-        <Button>BUTTON!</Button>
+        <div>
+          <Button>BUTTON!</Button>
+          <Button light>BUTTON!</Button>
+          <Button dark>BUTTON!</Button>
+        </div>
   ))
   .add('text and icon', () => (
-    <Button btnIcon="fa fa-glass">BUTTON!</Button>
+    <div>
+      <Button btnIcon="fa fa-glass">BUTTON!</Button>
+      <Button light btnIcon="fa fa-glass">BUTTON!</Button>
+    </div>
   ));
