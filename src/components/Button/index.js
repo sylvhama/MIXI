@@ -7,6 +7,7 @@ export const StyledButton = styled.button`
 	margin: 10px;
 	border: none;
 	padding: 8px 12px;
+  min-width: 240px;
 	background-color: ${colors.pink};
 	color: ${colors.darkPurple};
 	font-weight: bolder;
