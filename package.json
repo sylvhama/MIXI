@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@storybook/addon-backgrounds": "^3.3.11",
     "font-awesome": "^4.7.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -18,6 +17,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "devDependencies": {
+    "@storybook/addon-backgrounds": "^3.3.11",
     "@storybook/addon-knobs": "^3.3.11",
     "@storybook/react": "^3.3.11",
     "babel-core": "^6.26.0"
