@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Button from '../src/components/Button';
@@ -8,11 +8,11 @@ import '../src/index.css';
 import { backgrounds } from "./Background";
 
 const centerStyle = {
-  textAlign: 'center',
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 };
 
 const CenterDecorator = (centerFn) => (
@@ -25,15 +25,15 @@ storiesOf('Button', module)
   .addDecorator(CenterDecorator)
   .addDecorator(backgrounds)
   .add('text only', () => (
-        <div>
+        <Fragment>
           <Button>BUTTON!</Button>
           <Button light>BUTTON!</Button>
           <Button dark>BUTTON!</Button>
-        </div>
+        </Fragment>
   ))
   .add('text and icon', () => (
-    <div>
+    <Fragment>
       <Button Icon={<Icon icon={ICONS.GLASS} size={26} />}>BUTTON!</Button>
       <Button light Icon={<Icon icon={ICONS.GLASS} size={26} />}>BUTTON!</Button>
-    </div>
+    </Fragment>
   ));
