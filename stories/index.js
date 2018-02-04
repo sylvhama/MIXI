@@ -2,8 +2,9 @@ import React from 'react';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Button from '../src/components/Button';
+import Icon from '../src/components/Icon';
+import { ICONS } from '../src/constants'
 import '../src/index.css';
-import '../node_modules/font-awesome/css/font-awesome.min.css';
 import { backgrounds } from "./Background";
 
 const centerStyle = {
@@ -32,7 +33,7 @@ storiesOf('Button', module)
   ))
   .add('text and icon', () => (
     <div>
-      <Button btnIcon="fa fa-glass">BUTTON!</Button>
-      <Button light btnIcon="fa fa-glass">BUTTON!</Button>
+      <Button Icon={<Icon icon={ICONS.GLASS} size={26} />}>BUTTON!</Button>
+      <Button light Icon={<Icon icon={ICONS.GLASS} size={26} />}>BUTTON!</Button>
     </div>
   ));

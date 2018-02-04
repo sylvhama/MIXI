@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { colors } from '../../styles/constants'
+import PropTypes from 'prop-types';
 
 export const StyledButton = styled.button`
 	margin: 10px;
 	border: none;
 	padding: 8px 12px;
-	width: 9em;
-	height: 2em;
 	background-color: ${colors.pink};
 	color: ${colors.darkPurple};
 	font-weight: bolder;
-	font-size: 20pt;
+	line-height: 1;
+	font-size: 26px;
 	border-radius: 8px;
 	transition: transform ease-in .1s; 
 	box-shadow: 0px 0px 12px -1px ${colors.white};
 
 	&:hover {
 	  transform: scale(1.2);
+	}
+
+	& .caption {
+		vertical-align: middle;
 	}
 
 	${props => props.dark ? `
@@ -32,11 +36,23 @@ export const StyledButton = styled.button`
 	` : null}
 `;
 
-const Button = ({children, btnIcon, light, dark}) => (
+const Button = ({children, Icon, light, dark}) => (
   <StyledButton light={light} dark={dark}>
-    <span>{ children }</span>
-     { btnIcon ? <span className={ btnIcon }/> : null}
+  	{
+  		Icon ?
+    		<Fragment>
+    			<span className="caption">{ children }</span>{ Icon }
+    		</Fragment>
+			:
+				children 
+    }
   </StyledButton>
 )
+
+Button.propTypes = {
+  Icon: PropTypes.element,
+  light: PropTypes.bool,
+  dark: PropTypes.bool
+};
 
 export default Button;
