@@ -19,7 +19,6 @@
   "devDependencies": {
     "@storybook/addon-backgrounds": "^3.3.11",
     "@storybook/addon-knobs": "^3.3.11",
-    "@storybook/react": "^3.3.11",
-    "babel-core": "^6.26.0"
+    "@storybook/react": "^3.3.11"
   }
 }
